@@ -1,0 +1,25 @@
+{
+  "name": "MathXML",
+  "version": "0.0.1",
+  "description": "Convert to and from mathml",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeyjm145/MathMLXMLParser.git"
+  },
+  "keywords": [
+    "mathml",
+    "xml",
+    "npm"
+  ],
+  "author": "Michael Morguarge <mikeyjm14@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikeyjm145/MathMLXMLParser/issues"
+  },
+  "homepage": "https://github.com/mikeyjm145/MathMLXMLParser",
+  "dependencies": {}
+}
