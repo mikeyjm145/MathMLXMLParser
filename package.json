@@ -1,5 +1,5 @@
 {
-  "name": "MathXML",
+  "name": "mathxml",
   "version": "0.0.1",
   "description": "Convert to and from mathml",
   "main": "./lib/index.js",
