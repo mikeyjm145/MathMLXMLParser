@@ -1,7 +1,7 @@
-var sax = require('./sax/sax.js');
-var regMathParser = require('./parsers/Regular Math/RegMathToMathML.js');
-var regMathParserBackup = require('./parsers/Regular Math/RegMathToMathMLBackup.js');
-var mathMLToRegMathParser = require('./parsers/MathML/MathMLToRegMath.js');
+var sax = require('./lib/sax/sax.js');
+var regMathParser = require('./lib/parsers/Regular Math/RegMathToMathML.js');
+var regMathParserBackup = require('./lib/parsers/Regular Math/RegMathToMathMLBackup.js');
+var mathMLToRegMathParser = require('./lib/parsers/MathML/MathMLToRegMath.js');
 
 module.exports = function parse(parser, input) {
 	var RegMath_To_MathML = 0;
