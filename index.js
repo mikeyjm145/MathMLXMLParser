@@ -3,8 +3,8 @@ var regMathParser = require('./lib/parsers/Regular Math/RegMathToMathML.js');
 var regMathParserBackup = require('./lib/parsers/Regular Math/RegMathToMathMLBackup.js');
 var mathMLToRegMathParser = require('./lib/parsers/MathML/MathMLToRegMath.js');
 
-var javaParser = require('./lib/parsers/Regular Math/JavaToMathML.js');
-var javaParserBackup = require('./lib/parsers/Regular Math/JavaToMathMLBackup.js');
+var javaParser = require('./lib/parsers/Java/JavaToMathML.js');
+var javaParserBackup = require('./lib/parsers/Java/JavaToMathMLBackup.js');
 var mathMLToJavaParser = require('./lib/parsers/MathML/MathMLToJava.js');
 
 
