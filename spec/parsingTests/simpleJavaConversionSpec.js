@@ -39,9 +39,9 @@ function() {
 	});
     
     it("should return Math.sin() as output", function() {
-		var valueToParse = "Math.sin(5)";
+		var valueToParse = "Math.sin(5+4)";
 		var actual = parse(valueToParse);
-		var expected = "Math.sin(<mn>5</mn>\n)"
+		var expected = "<mfunc>sin</mfunc>\n<mfenced open='(' close=')' separators=''>\n<mn>5</mn>\n<mo>+</mo>\n<mn>4</mn>\n</mfenced>\n"
 		
 		expect(actual).toEqual(expected);
 	});
@@ -74,6 +74,23 @@ function() {
 		var valueToParse = "5 + something";
 		var actual = parse(valueToParse).replace(",", "");
 		var expected = "<mn>5</mn>\n<mo>+</mo>\n<mi>something</mi>\n"
+		
+		expect(actual.replace(",", "")).toEqual(expected);
+	});
+});
+
+describe("Parenthises Parsing Function For Java to MathML Backup",
+function() {
+    var regMathToMathMLParser = require('./../../lib/parsers/Java/JavaToMathMLBackup.js');
+	
+	function parse(input) {
+		return regMathToMathMLParser.parse(input);
+	}
+    
+    it("should return <mtext><mn>5</mn></mtext> as output", function() {
+		var valueToParse = "(5)";
+		var actual = parse(valueToParse);
+		var expected = "<mtext>(</mtext>\n<mn>5</mn>\n<mtext>)</mtext>\n"
 		
 		expect(actual).toEqual(expected);
 	});
