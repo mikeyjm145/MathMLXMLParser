@@ -1,6 +1,6 @@
 describe("Core Parsing Functions For Java to MathML",
 function() {
-	var regMathToMathMLParser = require('./../../lib/parsers/Java/JavaToMathML.js');
+	var regMathToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathML.js');
 	
 	function parse(input) {
 		return regMathToMathMLParser.parse(input);
@@ -81,7 +81,7 @@ function() {
 
 describe("Parenthises Parsing Function For Java to MathML Backup",
 function() {
-    var regMathToMathMLParser = require('./../../lib/parsers/Java/JavaToMathMLBackup.js');
+    var regMathToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathMLBackup.js');
 	
 	function parse(input) {
 		return regMathToMathMLParser.parse(input);
