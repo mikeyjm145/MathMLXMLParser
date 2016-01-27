@@ -4,9 +4,9 @@
   "description": "Convert to and from mathml",
   "main": "./lib/index.js",
   "scripts": {
-    "RegMathToMathML": "jasmine spec/parsingTests/LanguageToMathMLTests/simpleConversionSpec.js",
-    "JavaToMathML": "jasmine spec/parsingTests/LanguageToMathMLTests/simpleJavaConversionSpec.js",
-    "MathMLToRegMath": "jasmine spec/parsingTests/MathMLToLanguageTests/mathMLToRegMathConversionSpec.js"
+    "RegMathToMathML": "jasmine spec/parsingTests/LanguageToMathMLTests/FromRegMath.js",
+    "JavaToMathML": "jasmine spec/parsingTests/LanguageToMathMLTests/FromJava.js",
+    "MathMLToRegMath": "jasmine spec/parsingTests/MathMLToLanguageTests/ToRegMath.js"
   },
   "repository": {
     "type": "git",

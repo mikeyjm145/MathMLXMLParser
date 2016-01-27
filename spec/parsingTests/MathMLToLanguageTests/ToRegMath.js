@@ -1,4 +1,4 @@
-describe("Core Parsing Functions For Regular Math to MathML",
+describe("Core Parsing Functions For MathML to Regular Math",
 function() {
 	var mathMLToRegMathParser = require('./../../../index.js');
 	
