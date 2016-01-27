@@ -125,9 +125,18 @@ function() {
     
     it("should return Math.floor(4) as output", function() {
 		var valueToParse =
-            "<mfunc>floor</mfunc><mfenced open='(' close=')' separators=''><mn>1</mn></mfenced>";
+            "<mfunc>floor</mfunc><mfenced open='(' close=')' separators=''><mn>4</mn></mfenced>";
 		var actual = parse(valueToParse);
 		var expected = "Math.floor(4)";
+		
+		expect(actual).toEqual(expected);
+	});
+    
+    it("should return Math.floor(4) + Math.floor(6) as output", function() {
+		var valueToParse =
+            "<mfunc>floor</mfunc><mfenced open='(' close=')' separators=''><mn>4</mn></mfenced><mo>+</mo><mfunc>sin</mfunc><mfenced open='(' close=')' separators=''><mn>6</mn></mfenced>";
+		var actual = parse(valueToParse);
+		var expected = "Math.floor(4)+Math.floor(6)";
 		
 		expect(actual).toEqual(expected);
 	});
