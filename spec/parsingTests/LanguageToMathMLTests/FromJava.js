@@ -6,6 +6,39 @@ function() {
 		return regMathToMathMLParser.parse(input);
 	}
 	
+	it("should return error as output", function() {
+		var valueToParse = "Math.pow(,)";
+		var actual = parse(valueToParse);
+		var expected = "Please insert the first parameter into the expression.\n"
+		
+		expect(actual).toEqual(expected);
+	});
+    
+    it("should return error as output", function() {
+	var actual = "";
+	try {
+		var valueToParse = "Math.pow()";
+		actual = parse(valueToParse);
+		var expected = "SyntaxError"
+	} catch(x) {
+	console.log(x);
+		var error = /SyntaxError:/gi;
+		expect(actual.search(error) != -1).toEqual(true);
+	}
+		
+		
+		
+	});
+});
+
+describe("Core Parsing Functions For Java to MathML",
+function() {
+	var regMathToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathML.js');
+	
+	function parse(input) {
+		return regMathToMathMLParser.parse(input);
+	}
+	
 	it("should return <mn>5</mn> as output", function() {
 		var valueToParse = "5";
 		var actual = parse(valueToParse);
