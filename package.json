@@ -1,6 +1,6 @@
 {
   "name": "mathxml",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Convert to and from mathml",
   "main": "./lib/index.js",
   "scripts": {
