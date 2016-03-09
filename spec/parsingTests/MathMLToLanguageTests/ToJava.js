@@ -1,9 +1,9 @@
 describe("Core Parsing Functions For MathML to Java",
 function() {
-	var mathMLToRegMathParser = require('./../../../index.js');
+	var index = require('./../../../index.js');
 	
 	function parse(input) {
-		return mathMLToRegMathParser(5, input).replace("[,]", "");
+		return index(5, input).replace("[,]", "");
 	}
 	
 	it("should return 5 as output", function() {
@@ -33,10 +33,10 @@ function() {
 
 describe("Core Parsing Functions For MathML to Java Functions",
 function() {
-	var mathMLToRegMathParser = require('./../../../index.js');
+	var index = require('./../../../index.js');
 	
 	function parse(input) {
-		return mathMLToRegMathParser(5, input);
+		return index(5, input);
 	}
 	
 	it("should return Math.sin(1) as output", function() {
@@ -134,7 +134,7 @@ function() {
     
     it("should return Math.floor(4) + Math.floor(6) as output", function() {
 		var valueToParse =
-            "<mfunc>floor</mfunc><mfenced open='(' close=')' separators=''><mn>4</mn></mfenced><mo>+</mo><mfunc>sin</mfunc><mfenced open='(' close=')' separators=''><mn>6</mn></mfenced>";
+            "<mfunc>floor</mfunc><mfenced open='(' close=')' separators=''><mn>4</mn></mfenced><mo>+</mo><mfunc>floor</mfunc><mfenced open='(' close=')' separators=''><mn>6</mn></mfenced>";
 		var actual = parse(valueToParse);
 		var expected = "Math.floor(4)+Math.floor(6)";
 		

@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Bitnami\\meanstack-3.0.6-0\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Bitnami\\meanstack-3.0.6-0\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
+2 info using npm@1.4.9
+3 info using node@v0.12.7
+4 verbose node symlink C:\Bitnami\meanstack-3.0.6-0\nodejs\\node.exe
+5 error Error: Git working directory not clean.
+5 error M lib/parsers/Java/JavaToMathML.js
+5 error M lib/parsers/Java/JavaToMathMLBackup.js
+5 error M lib/parsers/MathML/MathMLToJava.js
+5 error M "lib/parsers/Regular Math/RegMathToMathML.js"
+5 error M "lib/parsers/Regular Math/RegMathToMathMLBackup.js"
+5 error M lib/parsers/parsingstrategy/MathMLToJavaStrategy.js
+5 error M lib/parsers/parsingstrategy/common.js
+5 error M spec/parsingTests/LanguageToMathMLTests/FromJava.js
+5 error M spec/parsingTests/LanguageToMathMLTests/FromRegMath.js
+5 error M spec/parsingTests/MathMLToLanguageTests/ToJava.js
+5 error     at C:\Bitnami\meanstack-3.0.6-0\nodejs\node_modules\npm\lib\version.js:98:35
+5 error     at ChildProcess.exithandler (child_process.js:742:7)
+5 error     at ChildProcess.emit (events.js:110:17)
+5 error     at maybeClose (child_process.js:1015:16)
+5 error     at Socket.<anonymous> (child_process.js:1183:11)
+5 error     at Socket.emit (events.js:107:17)
+5 error     at Pipe.close (net.js:485:12)
+6 error If you need help, you may report this *entire* log,
+6 error including the npm and node versions, at:
+6 error     <http://github.com/npm/npm/issues>
+7 error System Windows_NT 6.3.9600
+8 error command "C:\\Bitnami\\meanstack-3.0.6-0\\nodejs\\\\node.exe" "C:\\Bitnami\\meanstack-3.0.6-0\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "patch"
+9 error cwd E:\Research\Fall 2015-2016\MathMLParser
+10 error node -v v0.12.7
+11 error npm -v 1.4.9
+12 verbose exit [ 1, true ]

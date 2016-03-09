@@ -1,9 +1,9 @@
 describe("Core Parsing Functions For Java to MathML",
 function() {
-	var regMathToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathML.js');
+	var javaToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathML.js');
 	
 	function parse(input) {
-		return regMathToMathMLParser.parse(input);
+		return javaToMathMLParser.parse(input);
 	}
 	
 	it("should return error as output", function() {
@@ -33,10 +33,10 @@ function() {
 
 describe("Core Parsing Functions For Java to MathML",
 function() {
-	var regMathToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathML.js');
+	var javaToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathML.js');
 	
 	function parse(input) {
-		return regMathToMathMLParser.parse(input);
+		return javaToMathMLParser.parse(input);
 	}
 	
 	it("should return <mn>5</mn> as output", function() {
@@ -71,7 +71,7 @@ function() {
 		expect(actual).toEqual(expected);
 	});
     
-    it("should return Math.sin() as output", function() {
+    it("should return Math.sin(5+4) in MathML form as output", function() {
 		var valueToParse = "Math.sin(5+4)";
 		var actual = parse(valueToParse);
 		var expected = "<mfunc>sin</mfunc>\n<mfenced open='(' close=')' separators=''>\n<mn>5</mn>\n<mo>+</mo>\n<mn>4</mn>\n</mfenced>\n"
@@ -79,10 +79,18 @@ function() {
 		expect(actual).toEqual(expected);
 	});
     
-    it("should return Math.pow(,) as output", function() {
+    it("should return Math.pow(4,2) in MathML form as output", function() {
 		var valueToParse = "Math.pow(4,2)";
 		var actual = parse(valueToParse);
 		var expected = "<msup>\n<mn>4</mn>\n<mn>2</mn>\n</msup>\n"
+		
+		expect(actual).toEqual(expected);
+	});
+    
+    it("should return Math.pow((5+5),5) in MathML form as output", function() {
+		var valueToParse = "Math.pow((5+5),5)";
+		var actual = parse(valueToParse);
+		var expected = "<msup>\n<mfenced open='(' close=')' separators=''>\n<mn>5</mn>\n<mo>+</mo>\n<mn>5</mn>\n</mfenced>\n<mn>5</mn>\n</msup>\n"
 		
 		expect(actual).toEqual(expected);
 	});
@@ -110,20 +118,28 @@ function() {
 		
 		expect(actual.replace(",", "")).toEqual(expected);
 	});
+    
+    it("should return exponential minus one as output", function() {
+		var valueToParse = "Math.expm1(2)";
+		var actual = parse(valueToParse).replace(",", "");
+		var expected = "<msup>\n<mi>e</mi>\n<mfenced open='(' close=')' separators=''>\n<mn>2</mn>\n</mfenced>\n</msup>\n<mo>-</mo>\n<mn>1</mn>\n"
+		
+		expect(actual.replace(",", "")).toEqual(expected);
+	});
 });
 
 describe("Parenthises Parsing Function For Java to MathML Backup",
 function() {
-    var regMathToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathMLBackup.js');
+    var javaToMathMLParser = require('./../../../lib/parsers/Java/JavaToMathMLBackup.js');
 	
 	function parse(input) {
-		return regMathToMathMLParser.parse(input);
+		return javaToMathMLParser.parse(input);
 	}
     
-    it("should return <mtext><mn>5</mn></mtext> as output", function() {
+    it("should return <mfenced><mn>5</mn></mfenced> as output", function() {
 		var valueToParse = "(5)";
 		var actual = parse(valueToParse);
-		var expected = "<mtext>(</mtext>\n<mn>5</mn>\n<mtext>)</mtext>\n"
+		var expected = "<mfenced open='(' close=')' separators=''>\n<mn>5</mn>\n</mfenced>\n"
 		
 		expect(actual).toEqual(expected);
 	});
